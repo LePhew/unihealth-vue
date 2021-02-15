@@ -1,0 +1,7 @@
+{
+  "name": "unihealth",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
