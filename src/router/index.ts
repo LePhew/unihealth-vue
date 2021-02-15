@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/folder/:id',
-    component: () => import ('../views/Folder.vue')
+    component: () => import('../views/Folder.vue')
   }
 ]
 
@@ -17,4 +17,4 @@ const router = createRouter({
   routes
 })
 
-export default router
+export default router;
