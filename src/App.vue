@@ -12,7 +12,7 @@ import Layout from "@/views/components/layout/layout.vue";
 export default defineComponent({
   name: 'App',
   components: {
-    IonApp, 
+    IonApp,
     Layout
   },
 });
