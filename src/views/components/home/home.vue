@@ -3,7 +3,7 @@
     <ion-list v-for="item in items" :key="item">
       <RequestCard></RequestCard>
     </ion-list>
-      <ion-button class="btn-position" size="default" shape="round" color="success">+</ion-button>
+    <ion-button href="/blood-request" class="btn-position" size="default" shape="round" color="success">+</ion-button>
     <ion-infinite-scroll
       @ionInfinite="loadData($event)"
       threshold="100px"
@@ -22,7 +22,7 @@ import {
   IonInfiniteScrollContent,
   IonList,
   IonContent,
-  IonButton
+  IonButton,
 } from "@ionic/vue";
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
@@ -36,9 +36,10 @@ export default defineComponent({
     IonList,
     IonContent,
     RequestCard,
-    IonButton
+    IonButton,
   },
   setup() {
+    const router = useRouter();
     const isDisabled = ref(false);
     const items = ref([]) as any;
     const pushData = () => {
@@ -64,10 +65,8 @@ export default defineComponent({
     };
 
     pushData();
-    //
-    const router = useRouter();
     return { router, isDisabled, loadData, items };
-  }
+  },
 });
 </script>
 
