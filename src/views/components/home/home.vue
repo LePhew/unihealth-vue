@@ -3,7 +3,7 @@
     <ion-list v-for="item in items" :key="item">
       <RequestCard></RequestCard>
     </ion-list>
-    <ion-button href="/blood-request" class="btn-position" size="default" shape="round" color="success">+</ion-button>
+    
     <ion-infinite-scroll
       @ionInfinite="loadData($event)"
       threshold="100px"
@@ -13,6 +13,9 @@
       <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading..."></ion-infinite-scroll-content>
     </ion-infinite-scroll>
     <!-- <RequestCard></RequestCard> -->
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+       <ion-fab-button color="success">+</ion-fab-button>
+    </ion-fab>
   </ion-content>
 </template>
 
@@ -22,7 +25,8 @@ import {
   IonInfiniteScrollContent,
   IonList,
   IonContent,
-  IonButton,
+  IonFab,
+  IonFabButton
 } from "@ionic/vue";
 import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
@@ -36,7 +40,8 @@ export default defineComponent({
     IonList,
     IonContent,
     RequestCard,
-    IonButton,
+    IonFab,
+    IonFabButton
   },
   setup() {
     const router = useRouter();
